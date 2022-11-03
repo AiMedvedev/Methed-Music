@@ -148,3 +148,69 @@
 .player__icon-mute_off {
 	background-image: url("../img/mute_off.svg");
 }
+
+
+
+@media (max-width: 1040px) {
+	.player__container {
+		grid-template-columns: 1fr 1fr 2fr 1fr;
+	}
+}
+
+@media (max-width: 768px) {
+	.player {
+		left: 34px;
+		right: 34px;
+		padding: 22px 60px;
+		border-radius: 30px;
+	}
+
+	.player_active {
+		bottom: 24px;
+	}
+
+	.player__container {
+		grid-template-columns: 1fr 1fr 1fr;
+		row-gap: 27px;
+	}
+
+	.player__progress-wrap {
+		order: 1;
+		grid-column: 1 / -1;
+	}
+
+	.player__progress {
+		max-width: none;
+	}
+}
+
+@media (max-width: 680px) { 
+	.player {
+		left: 0;
+		right: 0;
+		padding: 16px;	
+	}
+
+	.player_active {
+		bottom: 0;
+		border-bottom-left-radius: 0;
+		border-bottom-right-radius: 0;
+	}
+
+	.player__container {
+		grid-template-columns: 1fr;
+		gap: 16px;
+	}
+
+	.player__controller {
+		justify-self: center;
+	}
+
+	.player__volume-wrap {
+		display: none;
+	}
+	
+	.player__progress-wrap {
+		width: 100%;
+	}
+}

@@ -11,3 +11,19 @@
 	font-weight: 300;
 	font-size: 14px;
 }
+
+
+@media (max-width: 680px) {  
+	.track-info {
+		text-align: center;
+	}
+
+	.track-info__title {
+		font-size: 14px;
+		margin-bottom: 4px;
+	}
+
+	.track-info__artist {
+		font-size: 12px;
+	}
+}
