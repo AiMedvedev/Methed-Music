@@ -1,7 +1,9 @@
 @import "normalize.css";
 @import "fonts.css";
 @import "default.css";
-
-.visually-hidden {
-	display: none;
-}
+@import "header.css";
+@import "search.css";
+@import "catalog.css";
+@import "track.css";
+@import "track-info.css";
+@import "player.css";
