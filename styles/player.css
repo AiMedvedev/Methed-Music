@@ -41,8 +41,12 @@
 	transition: fill .3s ease-in-out;
 }
 
-.player__icon:hover svg {
-	fill: #757575;
+.player__icon-pause {
+	background-image: url('../img/pause.svg');
+}
+
+.player__icon-play {
+	background-image: url('../img/play.svg');
 }
 
 .player__icon-favorite:active svg {
