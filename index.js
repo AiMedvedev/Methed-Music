@@ -92,6 +92,8 @@ const favoriteList = localStorage.getItem('favorite') ? JSON.parse(localStorage.
 
 const headerLogo = document.querySelector('.header__logo');
 const favoriteBtn = document.querySelector('.header__favorite');
+const searchForm = document.querySelector('.search');
+const search = document.querySelector('.search__input');
 
 let playlist = [];
 const trackCards = document.getElementsByClassName('track');
@@ -161,6 +163,8 @@ const playMusic = event => {
 	playerPauseBtn.classList.remove('player__icon-play');
 	player.classList.add('player_active');
 
+	player.dataset.idTrack = id;
+
 	const prevTrack = i === 0 ? playlist.length - 1 : i - 1;
 	const nextTrack = i + 1 === playlist.length ? 0 : i + 1;
 
@@ -206,6 +210,14 @@ const createCard = (data) => {
 	const card = document.createElement('a');
 	card.className = 'catalog__item track';
 	card.href = "#";
+
+	if (player.dataset.idTrack === data.id) {
+		card.classList.add('track_active');
+		if (audio.paused) {
+			card.classList.add('track_pause');
+		}
+	}
+
 	card.dataset.idTrack = data.id;
 	card.innerHTML = `
 		<div class = "track__wrapper" >
@@ -221,6 +233,8 @@ const createCard = (data) => {
 			<p class = "track-info__artist"> ${data.artist} </p> 
 		</div>
 	`;
+
+
 
 	return card;
 }
@@ -350,6 +364,14 @@ const init = () => {
 			playerVolumeInput.value = audio.volume * 100;
 			playerMuteBtn.classList.remove('player__icon-mute_off');
 		}
+	});
+
+	searchForm.addEventListener('submit', event => {
+		event.preventDefault();
+
+		const playlistSearch = playlist.filter(item => item.track.toLowerCase().includes(search.value.toLowerCase()) || item.artist.toLowerCase().includes(search.value.toLowerCase()));
+
+		renderCatalog(playlistSearch);
 	});
 }
 
