@@ -69,6 +69,10 @@
 	transition-property: background-color;
 }
 
+.track_pause .track__wrapper::after {
+	background-image: url("../img/play.svg");
+}
+
 .track_active:hover .track__wrapper::after {
 	background-color: #fff;
 }

@@ -49,7 +49,24 @@
 	background-image: url('../img/play.svg');
 }
 
+.player__icon-prev {
+	background-image: url('../img/prev.svg');
+}
+
+.player__icon-next {
+	background-image: url('../img/next.svg');
+}
+
+.player__icon-favorite {
+	background-image: url("../img/like-hollow.svg");
+}
+
 .player__icon-favorite:active svg {
+	background-image: url("../img/like.svg");
+}
+
+.player__icon-favorite_active {
+	filter: drop-shadow(0 0 3px purple);
 	background-image: url("../img/like.svg");
 }
 
